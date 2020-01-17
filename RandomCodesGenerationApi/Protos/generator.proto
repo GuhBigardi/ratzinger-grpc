@@ -1,0 +1,19 @@
+﻿syntax = "proto3";
+
+option csharp_namespace = "RatzingerGrpc";
+
+package generator;
+
+service Generators {
+	rpc GenerateRandomCodes (GeneratorRequest) returns (RandomCodes);
+}
+
+message GeneratorRequest {
+  int32 serialNumberInit = 1;
+  int32 serialNumberFinal = 2;
+  int32 quantityPerSerie = 3;
+}
+
+message RandomCodes {
+  repeated string code = 4;
+}

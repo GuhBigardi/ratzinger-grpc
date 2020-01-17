@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+option csharp_namespace = "RatzingerGrpc";
+
+package bless;
+
+service Blesser {
+	rpc SayBless (BlessRequest) returns (BlessReply);
+}
+
+message BlessRequest {
+  string name = 1;
+}
+
+message BlessReply {
+  string message = 1;
+}

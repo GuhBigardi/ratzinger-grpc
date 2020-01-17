@@ -1,0 +1,25 @@
+﻿syntax = "proto3";
+package bergogliov1;
+ 
+service Bergoglio {
+    rpc GetOneCodeWithBlessing(Entry) returns(End) {}
+    rpc GetManyCodes(ManyCodesRequest) returns(ManyCodesResponse) {}
+}
+ 
+message Entry {
+    string name = 1;
+}
+ 
+message End {
+    string code = 1;
+}
+ 
+message ManyCodesRequest {
+    int32 serialNumberInit = 1;
+    int32 serialNumberFinal = 2;
+    int32 quantityPerSerie = 3;
+}
+ 
+message ManyCodesResponse {
+    repeated string codes = 1;
+}
