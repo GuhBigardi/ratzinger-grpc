@@ -1,11 +1,14 @@
 ﻿syntax = "proto3";
 
+import "google/protobuf/empty.proto";
+
+
 option csharp_namespace = "RatzingerGrpc";
 
 package generator;
 
 service Generators {
-	rpc GenerateRandomCodes (GeneratorRequest) returns (RandomCodes);
+	rpc GenerateRandomCodes (GeneratorRequest) returns (google.protobuf.Empty);
 }
 
 message GeneratorRequest {

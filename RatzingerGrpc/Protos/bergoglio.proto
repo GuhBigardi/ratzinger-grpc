@@ -4,6 +4,7 @@ package bergogliov1;
 service Bergoglio {
     rpc GetOneCodeWithBlessing(Entry) returns(End) {}
     rpc GetManyCodes(ManyCodesRequest) returns(ManyCodesResponse) {}
+    rpc GetManyCodesStream(ManyCodesRequest) returns(stream ManyCodesResponse) {}
 }
  
 message Entry {
